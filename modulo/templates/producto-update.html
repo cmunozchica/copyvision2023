@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 style="text-align: center;">Actualizar producto</h2>
+
+
+    <form class="form" style="text-align:center;" method="POST">
+        {% csrf_token %}
+        <table  class="table table-bordered table-striped" border="5" >
+            <tbody align="left" >
+                {{ form.as_table }}
+            </tbody>
+        
+        </table>
+        <br>
+        <input type="submit" class="btn btn-success btn-xs" value="Actualizar producto" style='BORDER: rgb(128,128,128) 1px solid; FONT-SIZE: 16pt; FONT-FAMILY: Verdana; 
+        BACKGROUND-COLOR: #8c83ed'>
+                <br>
+
+    </form>
+
+{% endblock %}

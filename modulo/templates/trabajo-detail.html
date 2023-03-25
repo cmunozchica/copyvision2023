@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 style="text-align: center;">Detalles del trabajo</h2>
+
+
+    <form class="form" style="text-align:center;" method="POST">
+        {% csrf_token %}
+        <table  class="table table-bordered table-striped" border="3" >
+            <tbody align="left" >
+                {{ form.as_table }}
+            </tbody>
+        
+        </table>
+
+    </form>
+    <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+{% endblock %}

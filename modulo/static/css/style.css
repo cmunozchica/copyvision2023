@@ -1,0 +1,58 @@
+.header {
+    font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+    background-color:rgb(78, 216, 195);
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+
+.navbar-brand logo {
+    opacity: value;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    float: right;
+}
+
+.input {
+    width: 10px;
+    
+}
+.card-img-top {
+    opacity: value;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+.footer {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color:rgb(78, 216, 195);
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:2px;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+}
+h4 {
+    text-align: justify
+}
+
+.section {
+    background-image: url(/static/image/fondo2.jpg);
+    background-repeat: repeat;
+        }
+
+        
+        
+.form{
+            width:600px;
+            padding:16px;
+            border-radius:10px;
+            margin:auto;
+            background-color:rgb(78, 216, 195);
+    }
+
+.see {
+    background-image: url('/copyvision/modulo/static/image/informacion.png');
+}

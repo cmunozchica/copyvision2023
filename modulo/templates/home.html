@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main">
+    <section>
+     <div class="container text-center">
+       <div class="row">
+         <div class="col-sm-3">
+           <div class="card" style="width: 18rem;">
+             <img class="card-img-top" src="{% static 'image/plotter.png' %}" alt="imagen de plotter">
+             <div class="card-body">
+               <h5 class="card-title">Gran formato</h5>
+               <p class="card-text">Trabajos de impresión, plastificacion gran tamaño, plotter de corte</p>
+               <a href="/trabajo-list-granformato/" class="btn btn-primary">Lista de trabajos</a>
+             </div>
+           </div>
+         </div>
+         <div class="col-sm-3">
+           <div class="card" style="width: 18rem;">
+             <img class="card-img-top" src="{% static 'image/cortadora-laser.png' %}" alt="Cortadora laser">
+             <div class="card-body">
+               <h5 class="card-title">Corte laser y grabado</h5>
+               <p class="card-text">Trabajos de corte y impresion en laser</p>
+               <a href="trabajo-list-corte" class="btn btn-primary">Lista de trabajos</a>
+             </div>
+           </div>
+         </div>
+
+           <div class="col-sm-3">
+             <div class="card">
+               <div class="card" style="width: 18rem;">
+                 <img class="card-img-top" src="{% static 'image/impresora.png' %}" alt="impresora">
+                 <div class="card-body">
+                   <h5 class="card-title">Impresiones</h5>
+                   <p class="card-text">Impresiones de color, blanco y negro. planos</p>
+                   <a href="trabajo-list-impresiones" class="btn btn-primary">Lista de trabajos</a>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="col-sm-3">
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="{% static 'image/varios.png' %}" alt="Publicidad">
+               <div class="card-body">
+                 <h5 class="card-title">Publicidad</h5>
+                 <p class="card-text">Trabajos publicitarios vasos, llaveros, lapiceros y otros</p>
+                 <a href="trabajo-list-publicidad" class="btn btn-primary">Lista de trabajo</a>
+               </div>
+             </div>
+           </div>
+         </div>
+     </div>
+    </section>
+ </main>
+
+{% endblock %}

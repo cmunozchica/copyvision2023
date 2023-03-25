@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="card-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 search">
+                <form action="" method="get">
+                    <div class="input-group col-md-20">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    
+                    </div>
+                </form>
+
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    <br>
+    <h2 style="text-align: center;">Lista de productos</h2>
+    <h4>Cantidad productos: {{ count }}</h4>
+    <table class="table table-stripped table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Inf</th>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Disponibilidad</th>
+                <th scope="col">Creado</th>
+                <th scope="col">Actualizado</th>
+                <th scope="col">Actualizar</th>
+            </tr>
+        </thead>
+        <tbody>
+          {%if entity%}
+          {%for producto in entity%}
+            <tr>
+                <td><a type="button" class="" href="/producto-detail/{{ producto.id }}"><img src="{% static 'image/informacion.png' %}" height ="25" width="40" /></a></td> 
+                <td>{{producto.id}}</td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.categorias}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>{{producto.disponibilidad}}</td>
+                <td>{{producto.created}}</td>
+                <td>{{producto.update}}</td>
+                <td><a type="button" class="" href="/producto-update/{{ producto.id }}"><img src="{% static 'image/actualizar.png' %}" height ="25" width="35" /></a></td> 
+                
+                
+                
+            </tr>
+            
+          {% endfor %}
+          {%else%}
+              <h1>No hay registros de productos</h1>
+          {%endif%}          
+            
+        </tbody>
+    </table>
+    <div>{% include 'paginator.html' %}</div>
+    <tr>
+        <td><a type="button" class="btn btn-success" href="{%url 'producto-create' %}">Crear producto</a></td>
+
+        <td><a type="button" class="btn btn-light" href="/pdf-productos/">Imprimir</a></td> 
+    </tr>
+
+    
+
+</div>
+{% endblock %}

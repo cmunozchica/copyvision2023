@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="form" method="POST">
+    {% csrf_token %}
+    <table class="table" style="border-collapse: collapse;" border="3"; width="320">
+    {{ form.as_table }}
+    </table>
+    <input type="submit" class="btn btn-success btn-xs" value="Crear" style='BORDER: rgb(128,128,128) 1px solid; FONT-SIZE: 16pt; FONT-FAMILY: Verdana; 
+    BACKGROUND-COLOR: #8c83ed'>
+            
+
+</form>
+
+{% endblock %}

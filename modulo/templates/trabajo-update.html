@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 style="text-align: center;">Actualizar trabajos</h2>
+
+    
+    <form class="form" style="text-align:center;" method="POST">
+        {% csrf_token %}
+        
+        <table  class="table table-bordered table-striped" border="5" >
+            <tbody align="left" >
+                {{ form.as_table }}
+            </tbody>
+        
+        </table>
+        <tr>
+            <td><input type="submit" class="btn btn-success btn-xs" value="Actualizar trabajos" style='BORDER: rgb(128,128,128) 1px solid; FONT-SIZE: 16pt; FONT-FAMILY: Verdana; 
+                BACKGROUND-COLOR: #8c83ed'></td>
+            <td><input type="button" onclick="history.back()" name="volver atrás" value="volver atrás"></td>
+        </tr>
+        
+                
+
+    </form>
+    
+{% endblock %}

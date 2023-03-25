@@ -1,0 +1,40 @@
+<div class="card-body">
+     
+    <h2 style="text-align: center;">Lista de productos</h2>
+    <h6>Cantidad productos : {{ count }}</h6>
+    <table class="table table-stripped table-bordered table-hover table-striped" border="1">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categorias</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Disponibilidad</th>
+
+            </tr>
+        </thead>
+        <tbody>
+          {%if producto_context%}
+          {%for producto in producto_context%}
+            <tr>
+                <td>{{producto.id}}</td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.categorias}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.cantidad}}</td>
+                <td>{{producto.disponibilidad}}</td>
+
+
+                
+            </tr>
+          {% endfor %}
+          {%else%}
+              <h1>No hay registros de productos</h1>
+          {%endif%}
+        </tbody>
+    </table>
+
+    
+
+</div>

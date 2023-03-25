@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="card-body">
+     
+    <h4>Lista de trabajos de impresión</h4>
+    <h3>Cantidad trabajos: {{ count }}</h3>
+    <table class="table table-stripped" border="3">
+        <thead>
+            <tr>
+                <th></th>
+                <th scope="col">Id</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Fecha de entrega</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Trabajo</th>
+                <th scope="col">Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          {%if trabajo_context%}
+          {%for trabajo in trabajo_context%}
+            <tr>
+                <td><a type="button" class="" href="/trabajo-detail/{{ trabajo.id }}"><img src="{% static 'image/informacion.png' %}" height ="25" width="40" /></a></td> 
+                <td>{{trabajo.id}}</td>
+                <td>{{trabajo.cliente}}</td>
+                <td>{{trabajo.fecha}}</td>
+                <td>{{trabajo.fechaEntrega}}</td>
+                <td>{{trabajo.descripcion}}</td>
+                <td>{{trabajo.tipo}}</td>
+                <td>{{trabajo.tipoTrabajo}}</td>
+                <td>{{trabajo.estado}}</td>
+                <td><a type="button" class="" href="/trabajo-update/{{ trabajo.id }}"><img src="{% static 'image/actualizar.png' %}" height ="25" width="35" /></a></td>
+                
+            </tr>
+          {% endfor %}
+          {%else%}
+              <h1>No hay registros de trabajos</h1>
+          {%endif%}
+        </tbody>
+    </table>
+    <tr>
+        <td><a type="button" class="btn btn-success" href="{%url 'trabajo-create' %}">Crear trabajo</a></td>
+        <td><input type="button" onclick="history.back()" name="volver atrás" value="volver atrás"></td>
+        <td><a type="button" class="btn btn-light" href="/pdf-trabajosImp/">Imprimir</a></td> 
+        <td><a type="button" class="btn btn-light" href="{% url 'reporte_excel_trabajos' %}">Exportar a excel</a></td> 
+    </tr>
+    
+
+</div>
+{% endblock %}
